@@ -1,31 +1,165 @@
-/* Reset */
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
   
-  /* Estilos globais */
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    color: #333;
     line-height: 1.6;
-    color: #222;
-    background: linear-gradient(to right, #e9ecef, #9fb3c6);
   }
   
   .container {
-    text-align: center;
     max-width: 960px;
-    background-color: #fff;
-    margin: 20px auto;
-    border-radius: 6px;
-    padding: 20px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 20px 30px 50px 30px;
   }
   
-  header p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-top: -50px;
+  /* Header */
+  header {
+    background: #004080;
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    box-shadow: inset 0 -4px 8px rgba(0,0,0,0.2);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  /* Main layout */
+  main {
+    margin-top: 30px;
+  }
+  
+  /* Layout lado a lado */
+  .side-by-side {
+    display: flex;
+    gap: 30px;
+    align-items: center;
     margin-bottom: 50px;
   }
- 
+  
+  /* Inverte a ordem (texto à esquerda, imagens à direita) */
+  .side-by-side.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Imagem na lateral */
+  .side-img {
+    flex: 1;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    object-fit: cover;
+    height: 250px;
+  }
+  
+  /* Área de texto lateral */
+  .side-text {
+    flex: 1.3;
+  }
+  
+  .side-text h2 {
+    color: #004080;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  /* Para parágrafos */
+  .side-text p {
+    margin-bottom: 18px;
+    font-size: 18px;
+    color: #444;
+  }
+  
+  /* Grupo de imagens lado a lado */
+  .img-group {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .img-group img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    object-fit: cover;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .img-group img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Seção de dados técnicos */
+  .info-box {
+    background: #e6f0ff;
+    border-left: 6px solid #004080;
+    padding: 25px 30px;
+    border-radius: 8px;
+  }
+  
+  .info-box h2 {
+    margin-top: 0;
+    font-size: 26px;
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .info-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .info-box ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    color: #777;
+    margin-top: 50px;
+    font-size: 14px;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 860px) {
+    .side-by-side {
+      flex-direction: column;
+    }
+  
+    .side-by-side.reverse {
+      flex-direction: column;
+    }
+  
+    .side-img,
+    .img-group img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .img-group {
+      justify-content: center;
+    }
+  }
+  
